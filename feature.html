@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
-    <title>Gardener - Gardening Website Template</title>
+    <title>Itekt Afrique Senegal - Produits</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,6 +30,264 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Styles inspirés du template alimentaire */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/carousel-1.jpg') center/cover no-repeat;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-primary-custom {
+            background-color: #8a7356;
+            border-color: #8a7356;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #6d5b43;
+            border-color: #6d5b43;
+        }
+        
+        .product-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #8a7356;
+        }
+        
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            background: white;
+            border: 2px solid #8a7356;
+            color: #8a7356;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background: #8a7356;
+            color: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #8a7356;
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .promo-section {
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        }
+        
+        .promo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .promo-card-left {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .promo-card-right {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .promo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: calc(50% - 15px);
+        }
+        
+        .promo-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .promo-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .promo-card-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .promo-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .promo-btn {
+            background-color: #8a7356;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .promo-btn:hover {
+            background-color: #6d5b43;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .promo-container {
+                flex-direction: column;
+            }
+            
+            .promo-card-right {
+                flex-direction: column;
+            }
+            
+            .promo-card {
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -39,23 +297,26 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark text-light px-0 py-2">
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <span class="fa fa-phone-alt me-2"></span>
-                    <span>+012 345 6789</span>
+                    <span>+221 78 483 51 75</span>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <span class="fa fa-phone-alt me-2"></span>
+                    <span>+221 77 886 81 98</span>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <span class="far fa-envelope me-2"></span>
-                    <span>info@example.com</span>
+                    <span>ndepen23@gmail.com</span>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <span>Follow Us:</span>
+                    <span>Suivez nous sur:</span>
                     <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
@@ -66,187 +327,264 @@
     </div>
     <!-- Topbar End -->
 
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0">Gardener</h1>
+            <h1 class="m-0">Itekt Afrique Senegal</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Services</a>
-                <a href="project.html" class="nav-item nav-link">Projects</a>
+                <a href="index.html" class="nav-item nav-link active">Accueil</a>
+                <a href="about.html" class="nav-item nav-link">A Propos</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Toll Bi</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="feature.html" class="dropdown-item active">Features</a>
-                        <a href="quote.html" class="dropdown-item">Free Quote</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
+                        <a href="feature.html" class="dropdown-item">Produits</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="quote.html" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">citations<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
 
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5">
-            <h1 class="display-3 text-white mb-4 animated slideInDown">Features</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Features</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-
-    <!-- Feature Start -->
-    <div class="container-fluid py-5">
+    <!-- Hero Section Start -->
+    <div class="hero-section">
         <div class="container">
-            <div class="row gx-0">
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                                <i class="fa fa-times text-primary"></i>
-                            </div>
-                            <div class="ps-3">
-                                <h4>No Hidden Cost</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                                <i class="fa fa-users text-primary"></i>
-                            </div>
-                            <div class="ps-3">
-                                <h4>Dedicated Team</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                                <i class="fa fa-phone text-primary"></i>
-                            </div>
-                            <div class="ps-3">
-                                <h4>24/7 Available</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1 class="hero-title">Des Produits Agricoles Frais & Bio</h1>
+            <p class="hero-subtitle">Découvrez notre sélection de produits agricoles frais, cultivés avec passion et respect de l'environnement au cœur du Sénégal.</p>
+            <a href="#products" class="btn btn-primary-custom">Découvrir nos produits</a>
         </div>
     </div>
-    <!-- Feature End -->
+    <!-- Hero Section End -->
 
-
-    <!-- Facts Start -->
-    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 fw-semi-bold text-light">Happy Clients</span>
-                </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 fw-semi-bold text-light">Garden Complated</span>
-                </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 fw-semi-bold text-light">Dedicated Staff</span>
-                </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 fw-semi-bold text-light">Awards Achieved</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Facts End -->
-
-
-    <!-- Features Start -->
-    <div class="container-xxl py-5">
+    <!-- Products Section Start -->
+    <div id="products" class="product-section">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="fs-5 fw-bold text-primary">Why Choosing Us!</p>
-                    <h1 class="display-5 mb-4">Few Reasons Why People Choosing Us!</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <a class="btn btn-primary py-3 px-4" href="">Explore More</a>
+            <div class="section-title">
+                <h2>Nos Produits</h2>
+                <p>Découvrez notre gamme de produits agricoles de qualité.</p>
+            </div>
+            
+            <div class="product-categories">
+                 <h2> <p><strong>NB:les prix varient selon la saison</strong></p></h2>
+            </div>
+           
+
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/clt.jpg" alt="citron">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Citron Lime de Tahiti</h3>
+                        <div class="product-price"> 350 FCFA/kg</div>
+                        <p class="product-description">Le  <strong>lime de Tahiti</strong> est un petit agrume vert vif, juteux et acidulé, souvent utilisé pour parfumer plats et boissons.</p>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-6">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                                    <div class="text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
-                                        <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                                            <i class="fa fa-check fa-3x text-primary"></i>
-                                        </div>
-                                        <h4 class="mb-0">100% Satisfaction</h4>
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                                    <div class="text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
-                                        <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                                            <i class="fa fa-users fa-3x text-primary"></i>
-                                        </div>
-                                        <h4 class="mb-0">Dedicated Team</h4>
-                                    </div>
-                                </div>
-                            </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/bigaradier.jpg" alt="Oignons">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Citron Brigaradier</h3>
+                        <div class="product-price"> en production </div>
+                        <p class="product-description">Le  <strong>citron bigaradier</strong> est un agrume amer au zeste aromatique, utilisé surtout pour ses huiles essentielles et en confiserie.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/nostock.jpg" alt="Mangues">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mangues Kent</h3>
+                        <div class="product-price">indisponible</div>
+                        <p class="product-description">Mangues sucrées et juteuses, récoltées à maturité pour un goût exceptionnel.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/oeuf.jpg" alt="oeuf">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Oeuf</h3>
+                        <div class="product-price">2500 FCFA La Tablette</div>
+                        <p class="product-description">Riz de qualité cultivé dans la vallée du fleuve Sénégal, naturel et nutritif.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/poulet.jpg" alt="poulet">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Poulet</h3>
+                        <div class="product-price">1.500 FCFA/L</div>
+                        <p class="product-description">Jus naturel d'hibiscus sans conservateurs, riche en vitamines et antioxydants.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/papaye.jpg" alt="Papaye">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Papaye</h3>
+                        <div class="product-price">en production</div>
+                        <p class="product-description">Arachides grillées à perfection, croquantes et savoureuses pour l'apéritif.</p>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/nostock.jpg" alt="Mangues">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mangues Solaire</h3>
+                        <div class="product-price">indisponible</div>
+                        <p class="product-description">Mangues sucrées et juteuses, récoltées à maturité pour un goût exceptionnel.</p>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/nostock.jpg" alt="Mangues">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mangues Bouko Diekhal</h3>
+                        <div class="product-price">indisponible</div>
+                        <p class="product-description">Mangues sucrées et juteuses, récoltées à maturité pour un goût exceptionnel.</p>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/nostock.jpg" alt="Mangues">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mangues Pomme</h3>
+                        <div class="product-price">indisponible</div>
+                        <p class="product-description">Mangues sucrées et juteuses, récoltées à maturité pour un goût exceptionnel.</p>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/nostock.jpg" alt="Mangues">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mangues Sewal</h3>
+                        <div class="product-price">indisponible</div>
+                        <p class="product-description">Mangues sucrées et juteuses, récoltées à maturité pour un goût exceptionnel.</p>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/poudre.jpg" alt="Moringa">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Poudre de Moringua</h3>
+                        <div class="product-price">2.000 FCFA/kg</div>
+                        <p class="product-description">Mangues sucrées et juteuses, récoltées à maturité pour un goût exceptionnel.</p>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img/feuille.jpg" alt="Moringa">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Feuille de Moringa Sechees </h3>
+                        <div class="product-price">2.000 FCFA/kg</div>
+                        <p class="product-description">Mangues sucrées et juteuses, récoltées à maturité pour un goût exceptionnel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products Section End -->
+
+    <!-- Promo Section Start -->
+    <div class="promo-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Promotions Spéciales</h2>
+                <p style="color: #ddd;">Profitez de nos offres limitées</p>
+            </div>
+            
+            <div class="promo-container">
+                <!-- Carte individuelle à gauche -->
+                <div class="promo-card-left">
+                    <div style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Promotion légumes frais" class="promo-img">
+                        <div class="promo-badge">-20%</div>
+                    </div>
+                    <div class="promo-card-content">
+                        <h3 class="promo-title">Légumes Frais</h3>
+                        <button class="promo-btn">Voir l'offre</button>
+                    </div>
+                </div>
+                
+                <!-- Deux cartes superposées à droite -->
+                <div class="promo-card-right">
+                    <!-- Première carte droite -->
+                    <div class="promo-card">
+                        <div style="position: relative;">
+                            <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Promotion fruits exotiques" class="promo-img">
+                            <div class="promo-badge">-15%</div>
                         </div>
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
-                            <div class="text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
-                                <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                                    <i class="fa fa-tools fa-3x text-primary"></i>
-                                </div>
-                                <h4 class="mb-0">Modern Equipment</h4>
-                            </div>
+                        <div class="promo-card-content">
+                            <h3 class="promo-title">Fruits Exotiques</h3>
+                            <button class="promo-btn">Voir l'offre</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Deuxième carte droite -->
+                    <div class="promo-card">
+                        <div style="position: relative;">
+                            <img src="https://images.unsplash.com/photo-1598030304671-5aa1d6f13fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Promotion produits bio" class="promo-img">
+                            <div class="promo-badge">-30%</div>
+                        </div>
+                        <div class="promo-card-content">
+                            <h3 class="promo-title">Produits Bio</h3>
+                            <button class="promo-btn">Voir l'offre</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Features End -->
-
+    <!-- Promo Section End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <h4 class="text-white mb-4">Toll Bi</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Sorokh, Sebikhotane, Dakar, Sénégal</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+221 78 483 51 75</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ndepen23@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -256,54 +594,37 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Landscaping</a>
-                    <a class="btn btn-link" href="">Pruning plants</a>
-                    <a class="btn btn-link" href="">Urban Gardening</a>
-                    <a class="btn btn-link" href="">Garden Maintenance</a>
-                    <a class="btn btn-link" href="">Green Technology</a>
+                    <a class="btn btn-link" href="">Agriculture</a>
+                    <a class="btn btn-link" href="">Elevage</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative w-100">
-                        <input class="form-control bg-light border-light w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
+                    <h4 class="text-white mb-4">Liens Rapides</h4>
+                    <a class="btn btn-link" href="about.html">A Propos</a>
+                    <a class="btn btn-link" href="contact.html">Contacter Nous</a>
+                    <a class="btn btn-link" href="service.html">Nos Services</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
 
-
     <!-- Copyright Start -->
     <div class="container-fluid copyright py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">Itekt Afrique Senegal</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    Designed By <a class="border-bottom" href="https://testkhady.netlify.app">Aura Code</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Copyright End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -320,5 +641,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>
